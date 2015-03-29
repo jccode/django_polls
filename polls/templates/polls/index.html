@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n admin_static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link href="{% static "polls/css/polls.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>我最爱的下午茶</h1>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="thumbnail piece">
+            <img src="{% static "polls/img/chicken_nuggets.jpg" %}" alt="{% trans "Chicken nuggets" %}"/>
+            <div class="caption">
+                <h4 class="text-center">{% trans "Chicken nuggets" %}</h4>
+                <p class="text-right">
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {% trans "like" %} <span class="text-muted">16</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> {% trans "dislike" %} <span class="text-muted">1</span>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="thumbnail piece">
+            <img src="{% static "polls/img/potato_chips.jpg" %}" alt="{% trans "Potato chips" %}"/>
+            <div class="caption">
+                <h4 class="text-center">{% trans "Potato chips" %}</h4>
+                <p class="text-right">
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {% trans "like" %} <span class="text-muted">16</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> {% trans "dislike" %} <span class="text-muted">1</span>
+                    </button>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default piece">
+            <div class="panel-body">
+                <h3>什么? 最爱的下午茶在上面没有找到 T_T? 赶快提交你的最爱吧 </h3>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="food" class="sr-only">{% trans "Food" %}</label>
+                        <input type="text" id="food" class="form-control" placeholder="{% trans "my favorite food" %}" />
+                    </div>
+                    <button type="submit" class="btn btn-default">{% trans "submit" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
